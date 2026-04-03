@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM — Luxury Salon & Spa</title>
+    <meta name="description" content="AURUM is the pinnacle of luxury beauty. World-class hair, nails, spa, skin, and makeup services in an opulent setting. Book your transformation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-line"></div>
+            <span class="preloader-text">AURUM</span>
+            <span class="preloader-sub">LUXURY SALON & SPA</span>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <a href="#" class="nav-logo">AURUM</a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#team">Artists</a>
+            <a href="#membership">Members</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="btn-book-nav" onclick="openBooking()">Book Now</button>
+            <button class="btn-appointments" onclick="toggleAppointments()" title="My Appointments">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span class="badge" id="apptBadge" style="display:none;">0</span>
+            </button>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero.png" alt="AURUM Luxury Salon Interior" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-down">EST. 2018</div>
+            <h1 class="hero-title" data-animate="fade-up">
+                <span class="title-line">Where Beauty</span>
+                <span class="title-line accent">Meets Art</span>
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="0.2">An exclusive sanctuary for those who demand nothing less than perfection</p>
+            <div class="hero-cta" data-animate="fade-up" data-delay="0.4">
+                <button class="btn-primary" onclick="openBooking()">Book Your Experience</button>
+                <a href="#services" class="btn-outline">Explore Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-animate="slide-right">
+                    <div class="image-frame">
+                        <img src="assets/about.png" alt="AURUM Premium Tools" class="tilt-element">
+                        <div class="frame-accent"></div>
+                    </div>
+                </div>
+                <div class="about-content" data-animate="slide-left">
+                    <span class="section-tag">OUR STORY</span>
+                    <h2 class="section-title">A Legacy of <span class="gold">Elegance</span></h2>
+                    <p class="about-text">Founded in 2018, AURUM has redefined luxury beauty. Our world-class artisans, trained in Paris, Milan, and New York, bring unparalleled expertise to every service. We don't just style — we transform.</p>
+                    <p class="about-text">Every detail at AURUM — from our curated product lines to our bespoke marble interiors — is designed to provide an experience that transcends the ordinary.</p>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="30">0</span><span class="stat-suffix">K+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Expert Artists</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">WHAT WE OFFER</span>
+                <h2 class="section-title">Our <span class="gold">Services</span></h2>
+                <p class="section-desc">World-class treatments curated for the discerning few</p>
+            </div>
+            <div class="service-tabs" data-animate="fade-up">
+                <button class="tab active" data-tab="hair">Hair Studio</button>
+                <button class="tab" data-tab="nails">Nail Atelier</button>
+                <button class="tab" data-tab="spa">Spa & Wellness</button>
+                <button class="tab" data-tab="skin">Skin Science</button>
+                <button class="tab" data-tab="makeup">Makeup Artistry</button>
+                <button class="tab" data-tab="brows">Brows & Lashes</button>
+            </div>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">OUR PORTFOLIO</span>
+                <h2 class="section-title">The <span class="gold">Gallery</span></h2>
+                <p class="section-desc">A glimpse into transformations crafted by our artisans</p>
+            </div>
+            <div class="gallery-grid" data-animate="stagger">
+                <div class="gallery-item large"><img src="assets/hair.png" alt="Hair Styling"><div class="gallery-overlay"><span>Hair Artistry</span></div></div>
+                <div class="gallery-item"><img src="assets/nails.png" alt="Nail Art"><div class="gallery-overlay"><span>Nail Couture</span></div></div>
+                <div class="gallery-item"><img src="assets/spa.png" alt="Spa Treatment"><div class="gallery-overlay"><span>Spa Sanctuary</span></div></div>
+                <div class="gallery-item wide"><img src="assets/makeup.png" alt="Makeup"><div class="gallery-overlay"><span>Makeup Mastery</span></div></div>
+                <div class="gallery-item"><img src="assets/hero.png" alt="Interior"><div class="gallery-overlay"><span>Our Space</span></div></div>
+                <div class="gallery-item"><img src="assets/about.png" alt="Products"><div class="gallery-overlay"><span>Premium Products</span></div></div>
+                <div class="gallery-item"><img src="assets/gallery_extra.png" alt="Luxury Products"><div class="gallery-overlay"><span>Our Standards</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">THE ARTISANS</span>
+                <h2 class="section-title">Meet Our <span class="gold">Artists</span></h2>
+                <p class="section-desc">Masters of their craft, dedicated to your beauty</p>
+            </div>
+            <div class="team-intro" data-animate="fade-up">
+                <img src="assets/team_intro.png" alt="Our Artists" class="team-intro-img">
+                <div class="team-intro-content">
+                    <h3>The Creative Visionaries</h3>
+                    <p>At AURUM, our artists are hand-selected from the most prestigious salons across the globe. Bringing decades of combined experience from Paris, Milan, and New York, they blend timeless artistry with cutting-edge techniques to deliver world-class transformations tailored specifically to you.</p>
+                </div>
+            </div>
+            <div class="team-grid">
+                <div class="team-card tilt-element">
+                    <div class="team-avatar"><img src="assets/artist_sophia.png" alt="Sophia"></div>
+                    <h3>Sophia Laurent</h3>
+                    <span class="team-role">Creative Director & Hair Master</span>
+                    <p>Trained at Vidal Sassoon London. 18 years of haute couture hair artistry.</p>
+                    <div class="team-tags"><span>Balayage</span><span>Bridal</span><span>Color</span></div>
+                </div>
+                <div class="team-card tilt-element">
+                    <div class="team-avatar"><img src="assets/artist_alessandro.png" alt="Alessandro"></div>
+                    <h3>Alessandro Rossi</h3>
+                    <span class="team-role">Senior Stylist</span>
+                    <p>Milan-trained precision cutting specialist. Known for editorial transformations.</p>
+                    <div class="team-tags"><span>Precision Cut</span><span>Editorial</span><span>Men's</span></div>
+                </div>
+                <div class="team-card tilt-element">
+                    <div class="team-avatar"><img src="assets/artist_maya.png" alt="Maya"></div>
+                    <h3>Maya Chen</h3>
+                    <span class="team-role">Skin & Spa Lead</span>
+                    <p>Board-certified aesthetician. Expert in advanced facial technologies and holistic wellness.</p>
+                    <div class="team-tags"><span>HydraFacial</span><span>Chemical Peel</span><span>Wellness</span></div>
+                </div>
+                <div class="team-card tilt-element">
+                    <div class="team-avatar"><img src="assets/artist_elena.png" alt="Elena"></div>
+                    <h3>Elena Vasquez</h3>
+                    <span class="team-role">Makeup Director</span>
+                    <p>Celebrity makeup artist. Featured in Vogue, Harper's Bazaar, and ELLE.</p>
+                    <div class="team-tags"><span>Bridal</span><span>Airbrush</span><span>Editorial</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">CLIENT LOVE</span>
+                <h2 class="section-title">What They <span class="gold">Say</span></h2>
+            </div>
+            <div class="testimonial-carousel" id="testimonialCarousel" data-animate="fade-up">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"AURUM isn't just a salon — it's a realm of beauty. My balayage was absolute perfection. Sophia is a true artist."</p>
+                        <div class="testimonial-author"><strong>Victoria S.</strong><span>Hair Services</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The HydraFacial here changed my skin completely. The ambiance alone is worth the visit. Pure luxury from start to finish."</p>
+                        <div class="testimonial-author"><strong>James P.</strong><span>Skin Science</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Had my bridal makeup done here and I was speechless. Elena made me feel like a queen. Every bride needs this experience."</p>
+                        <div class="testimonial-author"><strong>Priya M.</strong><span>Bridal Package</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The couples massage was heavenly. Dark marble, golden light, aromatherapy — it's like stepping into another world."</p>
+                        <div class="testimonial-author"><strong>David & Sarah K.</strong><span>Spa & Wellness</span></div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">‹</button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="section membership">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">AURUM ELITE</span>
+                <h2 class="section-title">The <span class="gold">Membership</span></h2>
+                <p class="section-desc">Unlock exclusive perks, priority booking, and VIP events</p>
+            </div>
+            <div class="membership-grid">
+                <div class="mem-card tilt-element">
+                    <h3>Silver Tier</h3>
+                    <div class="mem-price"><span class="gold">$150</span> /mo</div>
+                    <ul>
+                        <li>1 Signature Haircut or Blowout</li>
+                        <li>1 Classic Manicure</li>
+                        <li>10% off retail products</li>
+                    </ul>
+                    <button class="btn-outline full-width">Join Silver</button>
+                </div>
+                <div class="mem-card popular tilt-element">
+                    <div class="mem-badge">Most Popular</div>
+                    <h3>Gold Tier</h3>
+                    <div class="mem-price"><span class="gold">$350</span> /mo</div>
+                    <ul>
+                        <li>Unlimited Blowouts</li>
+                        <li>1 Custom Facial or Massage</li>
+                        <li>Priority Artist Booking</li>
+                        <li>20% off retail products</li>
+                    </ul>
+                    <button class="btn-primary full-width">Join Gold</button>
+                </div>
+                <div class="mem-card tilt-element">
+                    <h3>Black Diamond</h3>
+                    <div class="mem-price"><span class="gold">$800</span> /mo</div>
+                    <ul>
+                        <li>Unlimited Signature Services</li>
+                        <li>Monthly VIP Box</li>
+                        <li>Private Room Access</li>
+                        <li>Complimentary Champagne</li>
+                    </ul>
+                    <button class="btn-outline full-width">Join Black</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="slide-right">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2 class="section-title">Visit <span class="gold">AURUM</span></h2>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div><strong>Address</strong><p>5th Avenue, Beverly Hills, CA 90210</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <div><strong>Phone</strong><p>+1 (310) 555-8899</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div><strong>Hours</strong><p>Mon-Sat: 10AM — 8PM | Sun: 11AM — 6PM</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <div><strong>Email</strong><p>concierge@aurumsalon.com</p></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.28 2.68 8 6.54 9.4-.04-.8-.08-2.03.02-2.91.09-.84.6-3.8.6-3.8s-.15-.31-.15-.76c0-.71.41-1.24.93-1.24.43 0 .64.32.64.7 0 .43-.27 1.08-.41 1.68-.12.5.25.91.74.91.89 0 1.58-.94 1.58-2.3 0-1.2-.86-2.04-2.1-2.04-1.4 0-2.22 1.05-2.22 2.14 0 .43.17.89.37 1.14.04.05.05.1.04.14-.04.18-.14.56-.16.63-.02.08-.06.1-.14.06-.52-.24-.84-1-84-1.6 0-1.31 1-3.64 3.96-3.64 2.38 0 4.24 1.7 4.24 3.96 0 2.37-1.5 4.28-3.57 4.28-.7 0-1.35-.36-1.58-.8l-.43 1.64c-.15.6-.43 1.34-.63 1.8A10 10 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+                        <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap" data-animate="slide-left">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleContact(event)">
+                        <div class="form-row">
+                            <div class="form-group"><input type="text" id="cName" placeholder="Your Name" required><label>Name</label></div>
+                            <div class="form-group"><input type="email" id="cEmail" placeholder="Email" required><label>Email</label></div>
+                        </div>
+                        <div class="form-group"><input type="text" id="cSubject" placeholder="Subject"><label>Subject</label></div>
+                        <div class="form-group"><textarea id="cMessage" placeholder="Your message..." rows="4" required></textarea><label>Message</label></div>
+                        <button type="submit" class="btn-primary full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-map" data-animate="fade-up" style="margin-top: 60px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.021021759247!2d-118.4034873847844!3d34.0689269805987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379ea4404fc!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1655000000000!5m2!1sen!2sus" width="100%" height="400" style="border:0; border-radius: var(--radius); filter: invert(100%) hue-rotate(180deg) brightness(80%) contrast(120%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand"><span class="nav-logo">AURUM</span><p>Luxury Salon & Spa</p></div>
+                <div class="footer-newsletter">
+                    <h4>Join the Inner Circle</h4>
+                    <p>Subscribe for exclusive events and offers.</p>
+                    <form onsubmit="event.preventDefault(); showToast('Welcome to the Inner Circle!'); this.reset();" class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+                <div class="footer-links">
+                    <a href="#membership">Membership</a><a href="#about">About</a><a href="#services">Services</a><a href="#team">Artists</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AURUM Salon. All rights reserved.</p>
+                <p>Crafted with excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeBooking()">&times;</button>
+            <div class="modal-header">
+                <h2>Book Your <span class="gold">Experience</span></h2>
+                <div class="booking-steps">
+                    <span class="step active" data-step="1">1. Service</span>
+                    <span class="step" data-step="2">2. Artist</span>
+                    <span class="step" data-step="3">3. Date</span>
+                    <span class="step" data-step="4">4. Time</span>
+                    <span class="step" data-step="5">5. Details</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Select Services -->
+                <div class="booking-step active" id="bStep1">
+                    <h3>Choose Your Services</h3>
+                    <div class="booking-tabs" id="bookingTabs"></div>
+                    <div class="booking-services" id="bookingServices"></div>
+                    <div class="cart-summary" id="cartSummary"><span>Selected: 0 services</span><span class="cart-total">$0</span></div>
+                </div>
+                <!-- Step 2: Choose Artist -->
+                <div class="booking-step" id="bStep2">
+                    <h3>Choose Your Artist</h3>
+                    <div class="artist-grid" id="artistGrid"></div>
+                </div>
+                <!-- Step 3: Pick Date -->
+                <div class="booking-step" id="bStep3">
+                    <h3>Select a Date</h3>
+                    <div class="calendar" id="calendar"></div>
+                </div>
+                <!-- Step 4: Pick Time -->
+                <div class="booking-step" id="bStep4">
+                    <h3>Select a Time</h3>
+                    <div class="time-slots" id="timeSlots"></div>
+                </div>
+                <!-- Step 5: Your Details -->
+                <div class="booking-step" id="bStep5">
+                    <h3>Your Details</h3>
+                    <div class="form-group"><input type="text" id="bName" placeholder="Full Name" required><label>Full Name</label></div>
+                    <div class="form-group"><input type="tel" id="bPhone" placeholder="Phone Number" required maxlength="14"><label>Phone</label></div>
+                    <div class="form-group"><input type="email" id="bEmail" placeholder="Email Address" required><label>Email</label></div>
+                    <div class="form-group"><textarea id="bNotes" placeholder="Special requests or notes..." rows="3"></textarea><label>Notes</label></div>
+                </div>
+                <!-- Confirmation -->
+                <div class="booking-step" id="bStepConfirm" style="display:none;">
+                    <div class="confirm-icon">✓</div>
+                    <h3>Booking Confirmed!</h3>
+                    <div id="confirmDetails" class="confirm-details"></div>
+                    <p class="confirm-note">A reminder will be sent before your appointment.</p>
+                </div>
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <button class="btn-outline" id="btnPrev" onclick="bookingNav(-1)" style="display:none">Back</button>
+                <button class="btn-primary" id="btnNext" onclick="bookingNav(1)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointments Panel -->
+    <div class="appointments-panel" id="appointmentsPanel">
+        <div class="panel-header">
+            <h3>My Appointments</h3>
+            <button onclick="toggleAppointments()">&times;</button>
+        </div>
+        <div class="panel-body" id="appointmentsList"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="Gallery Image">
+        <button class="lightbox-close">&times;</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/reminders.js"></script>
+</body>
+</html>
